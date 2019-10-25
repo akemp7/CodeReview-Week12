@@ -1,0 +1,22 @@
+@using Bakery.Models
+@model Bakery.Models.Flavor
+
+<h1>Flavor: @Model.Description</h1>
+<hr>
+
+@if (@Model.Treats.Count == 0)
+{
+    <h4>No treats have been added to this flavor description yet.</h4>
+}
+else
+{
+    <ul>
+    @foreach (var join in @Model.Treats)
+    {
+        <li>@Html.ActionLink(@join.Treat.Description, "Details", "Treats", new { id = join.TreatId })</li>
+    }
+    </ul>
+}
+
+<button class="btn btn-default">@Html.ActionLink("Back To Home", "Index", "Home")</button>
+<button class="btn btn-default">@Html.ActionLink("Add a flavor", "Create", "Flavors")</button>

@@ -15,7 +15,7 @@ namespace Bakery.Models
           .AddJsonFile("appsettings.json")
           .Build();
 
-      var builder = new DbContextOptionsBuilder<LibraryContext>();
+      var builder = new DbContextOptionsBuilder<BakeryContext>();
       var connectionString = configuration.GetConnectionString("DefaultConnection");
 
       builder.UseMySql(connectionString);
