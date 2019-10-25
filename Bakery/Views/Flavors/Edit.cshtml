@@ -1,0 +1,12 @@
+@model Bakery.Models.Flavor
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.FlavorId)
+
+    @Html.Label("Description", "Description: ")
+    @Html.EditorFor(model => model.Description, new { @class="form-control", required="required"})
+
+    @Html.Label("Treat: ")
+    @Html.DropDownList("TreatId")
+    <input type="submit" value="Update Flavor" class="btn btn-info">
+}

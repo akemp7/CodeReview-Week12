@@ -27,7 +27,8 @@ namespace Bakery.Controllers
 
     public ActionResult Index()
     {
-     
+     ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Description");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Description");
       return View();
     }
 

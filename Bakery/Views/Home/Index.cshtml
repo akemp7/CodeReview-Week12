@@ -3,22 +3,8 @@
 
 <h1>Welcome to Pierre's Bakery!</h1>
 
-<p>@Html.ActionLink("Register an account", "Index", "Account")</p>
+<p>@Html.ActionLink("Register an account", "Register", "Register")</p>
+<p>@Html.ActionLink("Login to my account", "Login", "Login")</p>
+<p>@Html.ActionLink("See treats", "Index", "Treats")</p>
 
 
-<h1>Flavor: @Model.Description</h1>
-<hr>
-
-@if (@Model.Treats.Count == 0)
-{
-    <h4>No treats have been added yet.</h4>
-}
-else
-{
-    <ul>
-    @foreach (var join in @Model.Treats)
-    {
-        <li>@Html.ActionLink(@join.Treat.Description, "Details", "Treats", new { id = join.TreatId })</li>
-    }
-    </ul>
-}

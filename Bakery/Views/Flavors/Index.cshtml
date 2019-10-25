@@ -19,3 +19,5 @@ else
 }
 
 <button class="btn btn-default">@Html.ActionLink("Back To Home", "Index", "Home")</button>
+<button class="btn btn-default">@Html.ActionLink("Delete Flavor", "Delete", new { id = @Model.FlavorId })</button>
+<button class="btn btn-default">@Html.ActionLink("Edit Flavor Info", "Edit", new { id = @Model.FlavorId })</button>
