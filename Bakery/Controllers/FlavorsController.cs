@@ -34,6 +34,7 @@ namespace Bakery.Controllers
 
          public ActionResult Create()
         {
+            ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Description");
             return View();
         }
 
