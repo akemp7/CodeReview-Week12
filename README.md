@@ -1,6 +1,6 @@
 # _Anita Kemp's Sweet/Savory Bakery_
 
-#### _A way to practice many-to-many relationships as part of the code review for Epicodus, 10/25/19_
+#### _A way to practice many-to-many relationships, along with Entity and Identity, as part of the code review for Epicodus, 10/25/19_
 
 #### By _Anita Kemp_
 
