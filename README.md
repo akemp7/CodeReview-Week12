@@ -11,7 +11,7 @@ This MVC application allows the user to input a list of treats and associated fl
 ## Setup/Installation Requirements
 
 * _Clone this repository_
-* _In command line, run dotnet ef migrations add Initial, then dotnet ef migrations update_
+* _In command line, run dotnet ef migrations update to generate database in MySQL_
 * _Run dotnet watch run_
 * _Navigate to localhost:5000/_
 
@@ -22,7 +22,7 @@ _Please leave a comment on this repository if there are any questions._
 
 ## Technologies Used
 
-_C#, .NET, MVC, MySQL, Entity_
+_C#, .NET, MVC, MySQL, Entity, Identity_
 
 ### License
 
