@@ -28,7 +28,30 @@ namespace Bakery.Controllers
 
     public ActionResult Create()
     {
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Description");
       return View();
     }
+
+    [HttpPost]
+        public ActionResult Create(Treat treat, int FlavorId)
+        {
+            _db.Treats.Add(treat);
+            if(FlavorId != 0)
+            {
+                _db.TreatFlavor.Add(new TreatFlavor(){FlavorId = FlavorId, TreatId= treat.TreatId});
+            }
+            _db.SaveChanges();
+            return RedirectToAction("Index", "Account");
+        }
+      
+      public ActionResult Details(int id)
+        {
+            Treat treat = _db.Treats
+                .Include(a => a.Flavors)
+                .ThenInclude(join => join.Flavor)
+                .FirstOrDefault(b => b.TreatId == id);
+            return View(treat);
+        }
+
   }
 }
